@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 class Style {
   static const primaryColor = Color(0xFF536B18);
 
-  static int contentMaxWidth = 776;
+  static int contentMaxWidth = 950;
   static int smallScreenWidth = 450;
 
   static double get contentPadding {
@@ -12,22 +12,11 @@ class Style {
     return availableSpace > 0 ? availableSpace / 2 : 0;
   }
 
+  static bool get isBurgerAppBar => Get.width <= 900;
+
   static ThemeData defaultTheme = ThemeData(
-    primarySwatch: MaterialColor(
-      primaryColor.value,
-      const {
-        50: primaryColor,
-        100: primaryColor,
-        200: primaryColor,
-        300: primaryColor,
-        400: primaryColor,
-        500: primaryColor,
-        600: primaryColor,
-        700: primaryColor,
-        800: primaryColor,
-        900: primaryColor,
-      },
-    ),
+    useMaterial3: true,
+    colorSchemeSeed: primaryColor,
     fontFamily: 'Poppins',
     textTheme: const TextTheme(
       titleLarge: TextStyle(
@@ -37,21 +26,8 @@ class Style {
   );
 
   static ThemeData easyReadingTheme = ThemeData(
-    primarySwatch: MaterialColor(
-      primaryColor.value,
-      const {
-        50: primaryColor,
-        100: primaryColor,
-        200: primaryColor,
-        300: primaryColor,
-        400: primaryColor,
-        500: primaryColor,
-        600: primaryColor,
-        700: primaryColor,
-        800: primaryColor,
-        900: primaryColor,
-      },
-    ),
+    useMaterial3: true,
+    colorSchemeSeed: primaryColor,
     textTheme: const TextTheme(
       titleLarge: TextStyle(
         color: primaryColor,

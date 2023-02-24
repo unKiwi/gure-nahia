@@ -1,8 +1,10 @@
+import 'package:esat_gurenahia/common/app_routes.dart';
 import 'package:esat_gurenahia/repository.dart';
 import 'package:flutter/material.dart';
 import 'package:footer/footer.dart';
 import 'package:footer/footer_view.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../style.dart';
 
@@ -14,235 +16,54 @@ class PageLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: GestureDetector(
-          onTap: () {
-            Get.toNamed('/');
-          },
-          child: const Text("Gure Nahia"),
-        ),
-        centerTitle: true,
-      ),
+      appBar: getAppBar(),
       drawer: Drawer(
-        child: Stack(
+        child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
           children: [
-            ListView(
-              padding: EdgeInsets.zero,
-              children: [
-                const SizedBox(height: 60),
-                InkWell(
-                  onTap: () {
-                    Get.back();
-                    Get.toNamed('/');
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 15),
-                    child: Column(
-                      children: [
-                        Container(
-                          decoration: ShapeDecoration(
-                            color: Colors.blueGrey[50],
-                            shape: const StadiumBorder(),
-                          ),
-                          height: 200,
-                          width: 200,
-                          child: const Icon(
-                            Icons.home,
-                            size: 170,
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-                        Text(
-                          "Accueil",
-                          style: Theme.of(context).textTheme.titleLarge,
-                        ),
-                      ],
-                    ),
-                  ),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: IconButton(
+                  onPressed: () => Get.back(),
+                  icon: const Icon(Icons.close),
                 ),
-                InkWell(
-                  onTap: () {
-                    Get.back();
-                    Get.toNamed('/ateliers');
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 15),
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: 200,
-                          width: 200,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(100),
-                            child: FittedBox(
-                              fit: BoxFit.cover,
-                              child: Image.asset(
-                                "assets/images/drawer/atelier.png",
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-                        Text(
-                          "Les Ateliers",
-                          style: Theme.of(context).textTheme.titleLarge,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                InkWell(
-                  onTap: () {
-                    Get.back();
-                    Get.toNamed('/soutiens');
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 15),
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: 200,
-                          width: 200,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(100),
-                            child: FittedBox(
-                              fit: BoxFit.cover,
-                              child: Image.asset(
-                                "assets/images/drawer/soutien.png",
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-                        Text(
-                          "Les Soutiens",
-                          style: Theme.of(context).textTheme.titleLarge,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                InkWell(
-                  onTap: () {
-                    Get.back();
-                    Get.toNamed('/formalites-administratives');
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 15),
-                    child: Column(
-                      children: [
-                        Container(
-                          decoration: ShapeDecoration(
-                            color: Colors.blueGrey[50],
-                            shape: const StadiumBorder(),
-                          ),
-                          height: 200,
-                          width: 200,
-                          child: const Icon(
-                            Icons.article_outlined,
-                            size: 170,
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-                        Text(
-                          "Les Formalités Administratives",
-                          textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.titleLarge,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                InkWell(
-                  onTap: () {
-                    Get.back();
-                    Get.toNamed('/prestations');
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 15),
-                    child: Column(
-                      children: [
-                        Container(
-                          decoration: ShapeDecoration(
-                            color: Colors.blueGrey[50],
-                            shape: const StadiumBorder(),
-                          ),
-                          height: 200,
-                          width: 200,
-                        ),
-                        const SizedBox(height: 10),
-                        Text(
-                          "Prestations mises a dispositions de l'usager",
-                          textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.titleLarge,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                // InkWell(
-                //   onTap: () {
-                //     Get.back();
-                //     Get.toNamed('/quotidien');
-                //   },
-                //   child: Padding(
-                //     padding: const EdgeInsets.symmetric(vertical: 15),
-                //     child: Column(
-                //       children: [
-                //         Container(
-                //           decoration: ShapeDecoration(
-                //             color: Colors.blueGrey[50],
-                //             shape: const StadiumBorder(),
-                //           ),
-                //           height: 200,
-                //           width: 200,
-                //         ),
-                //         const SizedBox(height: 10),
-                //         Text(
-                //           "Votre Quotidien a l'ESAT",
-                //           textAlign: TextAlign.center,
-                //           style: Theme.of(context).textTheme.titleLarge,
-                //         ),
-                //       ],
-                //     ),
-                //   ),
-                // ),
-                // InkWell(
-                //   onTap: () {
-                //     Get.back();
-                //   },
-                //   child: Padding(
-                //     padding: const EdgeInsets.symmetric(vertical: 15),
-                //     child: Column(
-                //       children: [
-                //         Container(
-                //           decoration: const ShapeDecoration(
-                //             color: Colors.greenAccent,
-                //             shape: StadiumBorder(),
-                //           ),
-                //           height: 200,
-                //           width: 200,
-                //         ),
-                //         const SizedBox(height: 10),
-                //         Text(
-                //           "Rien",
-                //           style: Theme.of(context).textTheme.titleLarge,
-                //         ),
-                //       ],
-                //     ),
-                //   ),
-                // ),
-                const SizedBox(height: 30),
-              ],
-            ),
-            Positioned(
-              top: 10,
-              left: 9,
-              child: IconButton(
-                splashRadius: 40,
-                onPressed: () => Get.back(),
-                icon: const Icon(Icons.close),
               ),
+            ),
+            DrawerHeader(
+              child: Image.asset("assets/logo_ESAT.jpg"),
+            ),
+            ListTile(
+              leading: const Icon(Icons.home),
+              title: const Text('Accueil'),
+              onTap: () => Get.toNamed(AppRoutes.home),
+            ),
+            ListTile(
+              leading: const Icon(Icons.table_restaurant),
+              title: const Text('Ateliers'),
+              onTap: () => Get.toNamed(AppRoutes.ateliers),
+            ),
+            ListTile(
+              leading: const Icon(Icons.group),
+              title: const Text('Accompagnement'),
+              onTap: () => Get.toNamed(AppRoutes.accompagnement),
+            ),
+            ListTile(
+              leading: const Icon(Icons.euro),
+              title: const Text('Rémunération'),
+              onTap: () => Get.toNamed(AppRoutes.remuneration),
+            ),
+            ListTile(
+              leading: const Icon(Icons.balance),
+              title: const Text('Vos droits'),
+              onTap: () => Get.toNamed(AppRoutes.droits),
+            ),
+            ListTile(
+              leading: const Icon(Icons.image),
+              title: const Text('Galerie'),
+              onTap: () => Get.toNamed(AppRoutes.galerie),
             ),
           ],
         ),
@@ -254,24 +75,129 @@ class PageLayout extends StatelessWidget {
             children: [
               TextButton(
                 onPressed: () {
-                  Get.toNamed('/vos-droits');
+                  Get.toNamed(AppRoutes.droits);
                 },
                 child: const Text("Vos droits"),
               ),
               TextButton(
                 onPressed: () {
-                  Get.toNamed('/lexique');
+                  Get.toNamed(AppRoutes.lexique);
                 },
                 child: const Text("Le lexique"),
               ),
             ],
           ),
         ),
-        // flex: 1,
         children: body,
       ),
     );
   }
+}
+
+getAppBar() {
+  if (Style.isBurgerAppBar) {
+    return AppBar(
+      title: Image.asset("assets/logo_ESAT.jpg"),
+    );
+  }
+  return PreferredSize(
+    preferredSize: const Size.fromHeight(80),
+    child: Container(
+      padding: EdgeInsets.symmetric(horizontal: Style.contentPadding),
+      child: Row(
+        children: [
+          MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: GestureDetector(
+              onTap: () => Get.toNamed(AppRoutes.home),
+              child: Image.asset(
+                'assets/Logo_ESAT.jpg',
+                height: 80,
+              ),
+            ),
+          ),
+          InkWell(
+            onTap: () => Get.toNamed(AppRoutes.home),
+            child: const Center(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8),
+                child: Icon(Icons.home),
+              ),
+            ),
+          ),
+          InkWell(
+            onTap: () => Get.toNamed(AppRoutes.ateliers),
+            child: const Center(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8),
+                child: Text(
+                  "Ateliers",
+                  style: TextStyle(fontSize: 18),
+                ),
+              ),
+            ),
+          ),
+          InkWell(
+            onTap: () => Get.toNamed(AppRoutes.accompagnement),
+            child: const Center(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8),
+                child: Text(
+                  "Accompagnement",
+                  style: TextStyle(fontSize: 18),
+                ),
+              ),
+            ),
+          ),
+          InkWell(
+            onTap: () => Get.toNamed(AppRoutes.remuneration),
+            child: const Center(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8),
+                child: Text(
+                  "Rémunération",
+                  style: TextStyle(fontSize: 18),
+                ),
+              ),
+            ),
+          ),
+          InkWell(
+            onTap: () => Get.toNamed(AppRoutes.droits),
+            child: const Center(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8),
+                child: Text(
+                  "Vos Droits",
+                  style: TextStyle(fontSize: 18),
+                ),
+              ),
+            ),
+          ),
+          InkWell(
+            onTap: () => Get.toNamed(AppRoutes.galerie),
+            child: const Center(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8),
+                child: Text(
+                  "Galerie",
+                  style: TextStyle(fontSize: 18),
+                ),
+              ),
+            ),
+          ),
+          const Spacer(),
+          IconButton(
+            onPressed: () {
+              launchUrl(Uri.parse(
+                "https://itineraires.txiktxak.fr/fr/horaires/Arbonne/arret/Gure-Nahia/1388",
+              ));
+            },
+            icon: const Icon(Icons.map),
+          ),
+        ],
+      ),
+    ),
+  );
 }
 
 class FAB extends StatelessWidget {
