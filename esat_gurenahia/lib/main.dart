@@ -1,5 +1,6 @@
 import 'package:esat_gurenahia/pages/ateliers.dart';
 import 'package:esat_gurenahia/pages/formalites.dart';
+import 'package:esat_gurenahia/pages/galerie.dart';
 import 'package:esat_gurenahia/pages/soutiens.dart';
 import 'package:esat_gurenahia/repository.dart';
 import 'package:esat_gurenahia/style.dart';
@@ -13,6 +14,7 @@ import 'pages/lexique.dart';
 import 'pages/prestations.dart';
 import 'pages/quotidien.dart';
 import 'pages/droits.dart';
+import 'pages/remuneration.dart';
 
 void main() {
   setPathUrlStrategy();
@@ -34,14 +36,14 @@ class MyApp extends StatelessWidget {
       routes: {
         AppRoutes.home: (context) => const Accueil(),
         AppRoutes.ateliers: (context) => const Ateliers(),
-        AppRoutes.remuneration: (context) => const Lexique(),
+        AppRoutes.remuneration: (context) => const Remuneration(),
         AppRoutes.droits: (context) => const Droits(),
         AppRoutes.accompagnement: (context) => const Soutiens(),
         AppRoutes.formaliteAdministratives: (context) => const Formalites(),
         AppRoutes.prestations: (context) => const Prestations(),
         AppRoutes.quotidien: (context) => const Quotidien(),
         AppRoutes.lexique: (context) => const Lexique(),
-        AppRoutes.galerie: (context) => const Lexique(),
+        AppRoutes.galerie: (context) => const Galerie(),
       },
     );
   }

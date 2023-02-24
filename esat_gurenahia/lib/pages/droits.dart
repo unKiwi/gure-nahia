@@ -31,7 +31,7 @@ class Droits extends StatelessWidget {
                   "https://sante.gouv.fr/fichiers/bo/2002/02-01/a0010066.htm",
                 ));
               },
-              child: const Text("Voir le texte de loi"),
+              child: const Text("Voir la loi"),
             ),
             onTap: () {
               launchUrl(Uri.parse(
