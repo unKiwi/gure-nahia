@@ -1,7 +1,6 @@
 import 'package:esat_gurenahia/common/app_routes.dart';
 import 'package:esat_gurenahia/repository.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:footer/footer.dart';
 import 'package:footer/footer_view.dart';
 import 'package:get/get.dart';
@@ -78,7 +77,7 @@ class PageLayout extends StatelessWidget {
                           "https://itineraires.txiktxak.fr/fr/horaires/Arbonne/arret/Gure-Nahia/1388",
                         ));
                       },
-                      icon: const Icon(Icons.map),
+                      icon: const Icon(Icons.directions_bus),
                     ),
                   ],
                 ),
@@ -93,9 +92,9 @@ class PageLayout extends StatelessWidget {
               children: [
                 TextButton(
                   onPressed: () {
-                    Get.toNamed(AppRoutes.droits);
+                    Get.toNamed(AppRoutes.quotidien);
                   },
-                  child: const Text("Vos droits"),
+                  child: const Text("Votre quotidien"),
                 ),
                 TextButton(
                   onPressed: () {
@@ -116,9 +115,12 @@ class PageLayout extends StatelessWidget {
 getAppBar() {
   if (Style.isBurgerAppBar) {
     return AppBar(
-      title: Image.asset(
-        "assets/logo_ESAT.png",
-        height: 56,
+      title: GestureDetector(
+        onTap: () => Get.toNamed('/'),
+        child: Image.asset(
+          "assets/logo_ESAT.png",
+          height: 56,
+        ),
       ),
     );
   }
@@ -126,14 +128,16 @@ getAppBar() {
     automaticallyImplyLeading: false,
     title: Container(
       padding: EdgeInsets.symmetric(horizontal: Style.contentPadding),
+      height: 56,
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           MouseRegion(
             cursor: SystemMouseCursors.click,
             child: GestureDetector(
               onTap: () => Get.toNamed(AppRoutes.home),
               child: Image.asset(
-                'assets/Logo_ESAT.png',
+                'assets/logo_ESAT.png',
                 height: 56,
               ),
             ),
@@ -208,13 +212,15 @@ getAppBar() {
             ),
           ),
           const Spacer(),
-          IconButton(
-            onPressed: () {
-              launchUrl(Uri.parse(
-                "https://itineraires.txiktxak.fr/fr/horaires/Arbonne/arret/Gure-Nahia/1388",
-              ));
-            },
-            icon: const Icon(Icons.map),
+          Center(
+            child: IconButton(
+              onPressed: () {
+                launchUrl(Uri.parse(
+                  "https://itineraires.txiktxak.fr/fr/horaires/Arbonne/arret/Gure-Nahia/1388",
+                ));
+              },
+              icon: const Icon(Icons.directions_bus),
+            ),
           ),
         ],
       ),
