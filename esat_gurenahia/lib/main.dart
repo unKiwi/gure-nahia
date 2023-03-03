@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
     Get.put(Repository());
 
     return GetMaterialApp(
-      title: "Livret d'acceuil - ESAT Gure Nahia",
+      title: "Livret d'accueil - ESAT Gure Nahia",
       theme: Style.defaultTheme,
       debugShowCheckedModeBanner: false,
       routes: {

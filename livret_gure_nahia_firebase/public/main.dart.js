@@ -37263,7 +37263,7 @@ r=$.eb
 if(r==null)r=$.eb=B.be
 r.KS(0,s,!1,null,t.UE)
 s=$.aiA()
-return new A.u6(A.aV(["/",new A.ZJ(),"/ateliers",new A.ZK(),"/remuneration",new A.ZL(),"/droits",new A.ZM(),"/accompagnement",new A.ZN(),"/formalites-administratives",new A.ZO(),"/prestations",new A.ZP(),"/quotidien",new A.ZQ(),"/lexique",new A.ZR(),"/galerie",new A.ZS()],t.N,t.Ab),"Livret d'acceuil - ESAT Gure Nahia",s,!1,null)}}
+return new A.u6(A.aV(["/",new A.ZJ(),"/ateliers",new A.ZK(),"/remuneration",new A.ZL(),"/droits",new A.ZM(),"/accompagnement",new A.ZN(),"/formalites-administratives",new A.ZO(),"/prestations",new A.ZP(),"/quotidien",new A.ZQ(),"/lexique",new A.ZR(),"/galerie",new A.ZS()],t.N,t.Ab),"Livret d'accueil - ESAT Gure Nahia",s,!1,null)}}
 A.ZJ.prototype={
 $1(a){return B.wT},
 $S:180}
