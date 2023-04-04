@@ -6,15 +6,15 @@ import 'package:get/get.dart';
 import '../repository.dart';
 
 class Formalites extends StatelessWidget {
-  const Formalites({super.key});
+   Formalites({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
+    return LayoutBuilder(builder: (context, raints) {
       return PageLayout([
         ContentPadding(content: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+            padding:  EdgeInsets.symmetric(vertical: 20, horizontal: 10),
             child: Text(
               "Les formalités administratives",
               style: Theme.of(context).textTheme.titleLarge,
@@ -22,12 +22,12 @@ class Formalites extends StatelessWidget {
           ),
           GetBuilder<Repository>(builder: (c) {
             return Stepper(
-              physics: const ClampingScrollPhysics(),
+              physics:  ClampingScrollPhysics(),
               currentStep: c.formalitesCurrentStep,
               onStepCancel: () => c.formalitesCurrentStep--,
               onStepContinue: () => c.formalitesCurrentStep++,
               onStepTapped: (value) => c.formalitesCurrentStep = value,
-              steps: const [
+              steps:  [
                 Step(
                   title: Text("Titre 1"),
                   content: Text(
@@ -73,7 +73,7 @@ class Formalites extends StatelessWidget {
                 Step(
                   title: Text("Titre 2"),
                   content: Text(
-                    "Au bout de 6 mois, votre projet personnalisé sera co construit avec le moniteur d'atelier référent.",
+                    "Au bout de 6 mois, votre projet personnalisé sera co ruit avec le moniteur d'atelier référent.",
                   ),
                 ),
                 Step(

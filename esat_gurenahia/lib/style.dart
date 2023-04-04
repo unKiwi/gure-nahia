@@ -20,7 +20,7 @@ class Style {
     fontFamily: 'Poppins',
     textTheme: const TextTheme(
       titleLarge: TextStyle(
-        color: primaryColor,
+        // color: primaryColor,
       ),
     ),
   );

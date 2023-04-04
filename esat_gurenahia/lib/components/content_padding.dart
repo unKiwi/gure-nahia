@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import '../style.dart';
 
 class ContentPadding extends StatelessWidget {
-  final List<Widget> content;
+  List<Widget> content;
 
-  const ContentPadding({super.key, required this.content});
+  ContentPadding({super.key, required this.content});
 
   @override
   Widget build(BuildContext context) {

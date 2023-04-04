@@ -18,11 +18,11 @@ import 'pages/remuneration.dart';
 
 void main() {
   setPathUrlStrategy();
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+   MyApp({super.key});
 
   // This widget is the root of your application.
   @override
@@ -33,18 +33,48 @@ class MyApp extends StatelessWidget {
       title: "Livret d'accueil - ESAT Gure Nahia",
       theme: Style.defaultTheme,
       debugShowCheckedModeBanner: false,
-      routes: {
-        AppRoutes.home: (context) => const Accueil(),
-        AppRoutes.ateliers: (context) => const Ateliers(),
-        AppRoutes.remuneration: (context) => const Remuneration(),
-        AppRoutes.droits: (context) => const Droits(),
-        AppRoutes.accompagnement: (context) => const Soutiens(),
-        AppRoutes.formaliteAdministratives: (context) => const Formalites(),
-        AppRoutes.prestations: (context) => const Prestations(),
-        AppRoutes.quotidien: (context) => const Quotidien(),
-        AppRoutes.lexique: (context) => const Lexique(),
-        AppRoutes.galerie: (context) => const Galerie(),
-      },
+      getPages: [
+        GetPage(
+          name: AppRoutes.home,
+          page: () =>  Accueil(),
+        ),
+        GetPage(
+          name: AppRoutes.ateliers,
+          page: () =>  Ateliers(),
+        ),
+        GetPage(
+          name: AppRoutes.remuneration,
+          page: () =>  Remuneration(),
+        ),
+        GetPage(
+          name: AppRoutes.droits,
+          page: () =>  Droits(),
+        ),
+        GetPage(
+          name: AppRoutes.accompagnement,
+          page: () =>  Soutiens(),
+        ),
+        GetPage(
+          name: AppRoutes.formaliteAdministratives,
+          page: () =>  Formalites(),
+        ),
+        GetPage(
+          name: AppRoutes.prestations,
+          page: () =>  Prestations(),
+        ),
+        GetPage(
+          name: AppRoutes.quotidien,
+          page: () =>  Quotidien(),
+        ),
+        GetPage(
+          name: AppRoutes.lexique,
+          page: () =>  Lexique(),
+        ),
+        GetPage(
+          name: AppRoutes.galerie,
+          page: () =>  Galerie(),
+        ),
+      ],
     );
   }
 }

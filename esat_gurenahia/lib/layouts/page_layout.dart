@@ -11,81 +11,77 @@ import '../style.dart';
 class PageLayout extends StatelessWidget {
   final List<Widget> body;
 
-  const PageLayout(this.body, {super.key});
+  PageLayout(this.body, {super.key});
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
+    return LayoutBuilder(builder: (context, raints) {
       return Scaffold(
         appBar: getAppBar(),
         drawer: Drawer(
-          child: ListView(
-            // Important: Remove any padding from the ListView.
-            padding: EdgeInsets.zero,
-            children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: IconButton(
-                    onPressed: () => Get.back(),
-                    icon: const Icon(Icons.close),
+          child: SafeArea(
+            child: ListView(
+              // Important: Remove any padding from the ListView.
+              padding: EdgeInsets.zero,
+              children: [
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: IconButton(
+                      onPressed: () => Get.back(),
+                      icon: const Icon(Icons.close),
+                    ),
                   ),
                 ),
-              ),
-              DrawerHeader(
-                child: Image.asset("assets/logo_ESAT.png"),
-              ),
-              ListTile(
-                leading: const Icon(Icons.home),
-                title: const Text('Accueil'),
-                onTap: () => Get.toNamed(AppRoutes.home),
-              ),
-              ListTile(
-                leading: const Icon(Icons.table_restaurant),
-                title: const Text('Ateliers'),
-                onTap: () => Get.toNamed(AppRoutes.ateliers),
-              ),
-              ListTile(
-                leading: const Icon(Icons.group),
-                title: const Text('Accompagnement'),
-                onTap: () => Get.toNamed(AppRoutes.accompagnement),
-              ),
-              ListTile(
-                leading: const Icon(Icons.euro),
-                title: const Text('Rémunération'),
-                onTap: () => Get.toNamed(AppRoutes.remuneration),
-              ),
-              ListTile(
-                leading: const Icon(Icons.balance),
-                title: const Text('Vos droits'),
-                onTap: () => Get.toNamed(AppRoutes.droits),
-              ),
-              ListTile(
-                leading: const Icon(Icons.image),
-                title: const Text('Galerie'),
-                onTap: () => Get.toNamed(AppRoutes.galerie),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    IconButton(
-                      onPressed: () {
-                        launchUrl(Uri.parse(
-                          "https://itineraires.txiktxak.fr/fr/horaires/Arbonne/arret/Gure-Nahia/1388",
-                        ));
-                      },
-                      icon: const Icon(Icons.directions_bus),
-                    ),
-                  ],
+                DrawerHeader(
+                  child: Image.asset("assets/logo_ESAT.png"),
                 ),
-              )
-            ],
+                ListTile(
+                  leading: const Icon(Icons.home),
+                  title: const Text('Accueil'),
+                  onTap: () => Get.toNamed(AppRoutes.home),
+                ),
+                ListTile(
+                  leading: const Icon(Icons.table_restaurant),
+                  title: const Text('Ateliers'),
+                  onTap: () => Get.toNamed(AppRoutes.ateliers),
+                ),
+                ListTile(
+                  leading: const Icon(Icons.group),
+                  title: const Text('Accompagnement'),
+                  onTap: () => Get.toNamed(AppRoutes.accompagnement),
+                ),
+                ListTile(
+                  leading: const Icon(Icons.euro),
+                  title: const Text('Rémunération'),
+                  onTap: () => Get.toNamed(AppRoutes.remuneration),
+                ),
+                ListTile(
+                  leading: const Icon(Icons.balance),
+                  title: const Text('Vos droits'),
+                  onTap: () => Get.toNamed(AppRoutes.droits),
+                ),
+                ListTile(
+                  leading: const Icon(Icons.image),
+                  title: const Text('Galerie'),
+                  onTap: () => Get.toNamed(AppRoutes.galerie),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: const [
+                      FacebookButton(),
+                      BusButton(),
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
-        floatingActionButton: const FAB(),
+        floatingActionButton: FAB(),
         body: FooterView(
           footer: Footer(
             child: Column(
@@ -112,6 +108,42 @@ class PageLayout extends StatelessWidget {
   }
 }
 
+class BusButton extends StatelessWidget {
+  const BusButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      onPressed: () {
+        launchUrl(Uri.parse(
+          "https://itineraires.txiktxak.fr/fr/horaires/Arbonne/arret/Gure-Nahia/1388",
+        ));
+      },
+      icon: const Icon(Icons.directions_bus),
+    );
+  }
+}
+
+class FacebookButton extends StatelessWidget {
+  const FacebookButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      onPressed: () {
+        launchUrl(Uri.parse(
+          "https://www.facebook.com/gurenahia/",
+        ));
+      },
+      icon: const Icon(Icons.facebook),
+    );
+  }
+}
+
 getAppBar() {
   if (Style.isBurgerAppBar) {
     return AppBar(
@@ -122,6 +154,7 @@ getAppBar() {
           height: 56,
         ),
       ),
+      centerTitle: true,
     );
   }
   return AppBar(
@@ -212,15 +245,11 @@ getAppBar() {
             ),
           ),
           const Spacer(),
-          Center(
-            child: IconButton(
-              onPressed: () {
-                launchUrl(Uri.parse(
-                  "https://itineraires.txiktxak.fr/fr/horaires/Arbonne/arret/Gure-Nahia/1388",
-                ));
-              },
-              icon: const Icon(Icons.directions_bus),
-            ),
+          const Center(
+            child: FacebookButton(),
+          ),
+          const Center(
+            child: BusButton(),
           ),
         ],
       ),
@@ -229,7 +258,7 @@ getAppBar() {
 }
 
 class FAB extends StatelessWidget {
-  const FAB({
+  FAB({
     super.key,
   });
 
@@ -257,7 +286,7 @@ class FAB extends StatelessWidget {
           showDialog(
             context: context,
             builder: (context) => AlertDialog(
-              title: const Text(title),
+              title: Text(title),
               content: content,
             ),
           );
@@ -292,7 +321,7 @@ class FAB extends StatelessWidget {
         );
       },
       child: const Icon(
-        Icons.accessibility_new,
+        Icons.accessible,
         size: 40,
       ),
     );

@@ -4,34 +4,34 @@ import 'package:flutter/material.dart';
 import '../components/content_padding.dart';
 
 class Remuneration extends StatelessWidget {
-  const Remuneration({super.key});
+   Remuneration({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
+    return LayoutBuilder(builder: (context, raints) {
       return PageLayout([
         ContentPadding(content: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+            padding:  EdgeInsets.symmetric(vertical: 20, horizontal: 10),
             child: Text(
               "La rémunération",
               style: Theme.of(context).textTheme.titleLarge,
             ),
           ),
-          const Text(
+           Text(
               "Vous serez rémunéré le SMIC pour un travail à temps plein."),
-          const Text("L'ESAT vous versera :"),
-          const ListTile(
+           Text("L'ESAT vous versera :"),
+           ListTile(
             title: Text("une rémunération directe"),
           ),
-          const ListTile(
+           ListTile(
             title: Text("une aide au poste financée par l'Etat"),
           ),
-          const Text("La CAF ou la MSA vous versera :"),
-          const ListTile(
+           Text("La CAF ou la MSA vous versera :"),
+           ListTile(
             title: Text("l’Allocation Adulte Handicapé"),
           ),
-          const ColoredBox(
+           ColoredBox(
             color: Color.fromRGBO(255, 209, 128, 1),
             child: ListTile(
               leading: Icon(Icons.warning),
@@ -39,13 +39,13 @@ class Remuneration extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+            padding:  EdgeInsets.symmetric(vertical: 20, horizontal: 10),
             child: Text(
-              "Un example concret",
+              "Un exemple concret",
               style: Theme.of(context).textTheme.titleLarge,
             ),
           ),
-          const AspectRatio(
+           AspectRatio(
             aspectRatio: 16 / 9,
             child: ColoredBox(
               color: Colors.black,
