@@ -71,6 +71,8 @@ flutter:
     - assets/images/carousel/
     - assets/images/drawer/
     - assets/images/galerie/
+    - assets/images/atelier/image/
+    - assets/images/atelier/vignette/
     - assets/videos/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
