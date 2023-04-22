@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_constructors_in_immutables
+
 import 'package:esat_gurenahia/components/content_padding.dart';
 import 'package:esat_gurenahia/layouts/page_layout.dart';
 import 'package:flutter/material.dart';

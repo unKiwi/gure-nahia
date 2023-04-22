@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_constructors_in_immutables, prefer_const_literals_to_create_immutables
+
 import 'package:esat_gurenahia/components/content_padding.dart';
 import 'package:esat_gurenahia/layouts/page_layout.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +8,7 @@ import 'package:get/get.dart';
 import '../repository.dart';
 
 class Formalites extends StatelessWidget {
-   Formalites({super.key});
+  Formalites({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class Formalites extends StatelessWidget {
       return PageLayout([
         ContentPadding(content: [
           Padding(
-            padding:  EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
             child: Text(
               "Les formalités administratives",
               style: Theme.of(context).textTheme.titleLarge,
@@ -22,12 +24,12 @@ class Formalites extends StatelessWidget {
           ),
           GetBuilder<Repository>(builder: (c) {
             return Stepper(
-              physics:  ClampingScrollPhysics(),
+              physics: ClampingScrollPhysics(),
               currentStep: c.formalitesCurrentStep,
               onStepCancel: () => c.formalitesCurrentStep--,
               onStepContinue: () => c.formalitesCurrentStep++,
               onStepTapped: (value) => c.formalitesCurrentStep = value,
-              steps:  [
+              steps: [
                 Step(
                   title: Text("Titre 1"),
                   content: Text(

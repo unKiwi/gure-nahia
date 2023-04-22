@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors_in_immutables
+
 import 'package:esat_gurenahia/common/app_routes.dart';
 import 'package:esat_gurenahia/repository.dart';
 import 'package:flutter/material.dart';
@@ -81,8 +83,9 @@ class PageLayout extends StatelessWidget {
             ),
           ),
         ),
-        floatingActionButton: FAB(),
+        // floatingActionButton: FAB(),
         body: FooterView(
+          flex: 5,
           footer: Footer(
             child: Column(
               children: [
@@ -286,7 +289,7 @@ class FAB extends StatelessWidget {
           showDialog(
             context: context,
             builder: (context) => AlertDialog(
-              title: Text(title),
+              title: const Text(title),
               content: content,
             ),
           );

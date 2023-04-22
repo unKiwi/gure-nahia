@@ -1,6 +1,7 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors_in_immutables
+
 import 'package:esat_gurenahia/components/content_padding.dart';
 import 'package:esat_gurenahia/layouts/page_layout.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 import '../style.dart';
@@ -70,67 +71,67 @@ class Accueil extends StatelessWidget {
   }
 }
 
-class AccueilCarousel extends StatelessWidget {
-  final List<String> images = [
-    "assets/images/carousel/global_view.jpeg",
-    "assets/images/carousel/facade.jpeg",
-    "assets/images/carousel/interieur.jpeg",
-    "assets/images/carousel/serre.jpeg",
-    "assets/images/carousel/fleure.jpeg",
-  ];
+// class AccueilCarousel extends StatelessWidget {
+//   final List<String> images = [
+//     "assets/images/carousel/global_view.jpeg",
+//     "assets/images/carousel/facade.jpeg",
+//     "assets/images/carousel/interieur.jpeg",
+//     "assets/images/carousel/serre.jpeg",
+//     "assets/images/carousel/fleure.jpeg",
+//   ];
 
-  AccueilCarousel({
-    super.key,
-  });
+//   AccueilCarousel({
+//     super.key,
+//   });
 
-  @override
-  Widget build(BuildContext context) {
-    // return SizedBox(
-    //   height: 500,
-    //   child: InfiniteCarousel.builder(
-    //     itemCount: images.length,
-    //     itemExtent: 350,
-    //     center: true,
-    //     anchor: 0.0,
-    //     velocityFactor: 0.2,
-    //     onIndexChanged: (index) {},
-    //     controller: InfiniteScrollController(),
-    //     axisDirection: Axis.horizontal,
-    //     loop: true,
-    //     itemBuilder: (context, itemIndex, realIndex) {
-    //       return Container(
-    //         color: Colors.amber,
-    //         child: Image.asset(
-    //           images[itemIndex],
-    //         ),
-    //       );
-    //     },
-    //     scrollBehavior: ScrollConfiguration.of(context).copyWith(
-    //       dragDevices: {
-    //         // Allows to swipe in web browsers
-    //         PointerDeviceKind.touch,
-    //         PointerDeviceKind.mouse
-    //       },
-    //     ),
-    //   ),
-    // );
-    return CarouselSlider(
-      items: [
-        Image.asset("assets/images/carousel/global_view.jpeg"),
-        Image.asset("assets/images/carousel/facade.jpeg"),
-        Image.asset("assets/images/carousel/interieur.jpeg"),
-        Image.asset("assets/images/carousel/serre.jpeg"),
-        Image.asset("assets/images/carousel/fleure.jpeg"),
-      ]
-          .map((e) => ClipRRect(
-                borderRadius: BorderRadius.circular(10.0),
-                child: e,
-              ))
-          .toList(),
-      options: CarouselOptions(
-        autoPlay: true,
-        height: 300,
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     // return SizedBox(
+//     //   height: 500,
+//     //   child: InfiniteCarousel.builder(
+//     //     itemCount: images.length,
+//     //     itemExtent: 350,
+//     //     center: true,
+//     //     anchor: 0.0,
+//     //     velocityFactor: 0.2,
+//     //     onIndexChanged: (index) {},
+//     //     controller: InfiniteScrollController(),
+//     //     axisDirection: Axis.horizontal,
+//     //     loop: true,
+//     //     itemBuilder: (context, itemIndex, realIndex) {
+//     //       return Container(
+//     //         color: Colors.amber,
+//     //         child: Image.asset(
+//     //           images[itemIndex],
+//     //         ),
+//     //       );
+//     //     },
+//     //     scrollBehavior: ScrollConfiguration.of(context).copyWith(
+//     //       dragDevices: {
+//     //         // Allows to swipe in web browsers
+//     //         PointerDeviceKind.touch,
+//     //         PointerDeviceKind.mouse
+//     //       },
+//     //     ),
+//     //   ),
+//     // );
+//     return CarouselSlider(
+//       items: [
+//         Image.asset("assets/images/carousel/global_view.jpeg"),
+//         Image.asset("assets/images/carousel/facade.jpeg"),
+//         Image.asset("assets/images/carousel/interieur.jpeg"),
+//         Image.asset("assets/images/carousel/serre.jpeg"),
+//         Image.asset("assets/images/carousel/fleure.jpeg"),
+//       ]
+//           .map((e) => ClipRRect(
+//                 borderRadius: BorderRadius.circular(10.0),
+//                 child: e,
+//               ))
+//           .toList(),
+//       options: CarouselOptions(
+//         autoPlay: true,
+//         height: 300,
+//       ),
+//     );
+//   }
+// }

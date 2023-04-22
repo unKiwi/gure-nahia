@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors_in_immutables, prefer_const_constructors
+
 import 'package:esat_gurenahia/pages/ateliers.dart';
 import 'package:esat_gurenahia/pages/formalites.dart';
 import 'package:esat_gurenahia/pages/galerie.dart';
@@ -18,11 +20,11 @@ import 'pages/remuneration.dart';
 
 void main() {
   setPathUrlStrategy();
-  runApp( MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-   MyApp({super.key});
+  MyApp({super.key});
 
   // This widget is the root of your application.
   @override
@@ -36,43 +38,43 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(
           name: AppRoutes.home,
-          page: () =>  Accueil(),
+          page: () => Accueil(),
         ),
         GetPage(
           name: AppRoutes.ateliers,
-          page: () =>  Ateliers(),
+          page: () => Ateliers(),
         ),
         GetPage(
           name: AppRoutes.remuneration,
-          page: () =>  Remuneration(),
+          page: () => Remuneration(),
         ),
         GetPage(
           name: AppRoutes.droits,
-          page: () =>  Droits(),
+          page: () => Droits(),
         ),
         GetPage(
           name: AppRoutes.accompagnement,
-          page: () =>  Soutiens(),
+          page: () => Soutiens(),
         ),
         GetPage(
           name: AppRoutes.formaliteAdministratives,
-          page: () =>  Formalites(),
+          page: () => Formalites(),
         ),
         GetPage(
           name: AppRoutes.prestations,
-          page: () =>  Prestations(),
+          page: () => Prestations(),
         ),
         GetPage(
           name: AppRoutes.quotidien,
-          page: () =>  Quotidien(),
+          page: () => Quotidien(),
         ),
         GetPage(
           name: AppRoutes.lexique,
-          page: () =>  Lexique(),
+          page: () => Lexique(),
         ),
         GetPage(
           name: AppRoutes.galerie,
-          page: () =>  Galerie(),
+          page: () => Galerie(),
         ),
       ],
     );

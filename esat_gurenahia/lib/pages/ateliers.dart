@@ -1,9 +1,12 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_constructors_in_immutables
+
 import 'package:esat_gurenahia/components/content_padding.dart';
+import 'package:esat_gurenahia/components/video/video_view.dart';
 import 'package:esat_gurenahia/layouts/page_layout.dart';
 import 'package:flutter/material.dart';
 
 class Ateliers extends StatelessWidget {
-  Ateliers({super.key});
+  const Ateliers({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,19 +25,7 @@ class Ateliers extends StatelessWidget {
               "L'ESAT propose diverses activités et outils adaptés qui vous permettent de développer votre potentiel au sein de l'ESAT. Des moniteurs d'atelier sont là pour vous encadrer.",
             ),
             SizedBox(height: 20),
-            AspectRatio(
-              aspectRatio: 16 / 9,
-              child: ColoredBox(
-                color: Colors.black,
-                child: Center(
-                  child: Icon(
-                    Icons.play_arrow,
-                    color: Colors.white,
-                    size: 60,
-                  ),
-                ),
-              ),
-            ),
+            VideoView(),
             Padding(
               padding: EdgeInsets.only(top: 30, bottom: 20, left: 10),
               child: Text(
@@ -58,7 +49,7 @@ class Ateliers extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(top: 30, bottom: 20, left: 10),
               child: Text(
-                "Les 8 ateliers de sous traitance",
+                "Sous traitance",
                 style: Theme.of(context).textTheme.titleLarge,
               ),
             ),
