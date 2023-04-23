@@ -10,7 +10,7 @@ class VideoController extends GetxController {
     super.onInit();
 
     videoPlayerController =
-        VideoPlayerController.asset("videos/ESAT_animation.mp4")
+        VideoPlayerController.asset("assets/videos/ESAT_animation.mp4")
           ..initialize().then((value) => update());
     customVideoPlayerController = CustomVideoPlayerController(
       context: Get.context!,

@@ -13,7 +13,7 @@ class Soutiens extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, raints) {
+    return LayoutBuilder(builder: (context, constraints) {
       return PageLayout([
         ContentPadding(content: [
           Padding(
@@ -27,48 +27,52 @@ class Soutiens extends StatelessWidget {
             "L'ESAT vous accompagne dans votre parcours professionnel et met en œuvre différents soutiens en lien avec votre projet personnalisé. Ils sont proposés durant le temps de travail.",
           ),
           SizedBox(height: 20),
-          GridView.count(
-            crossAxisCount: (Get.width / 550).floor() + 1,
-            physics: NeverScrollableScrollPhysics(),
-            shrinkWrap: true,
-            childAspectRatio: 5 / 2,
-            children: const [
-              Soutien(
-                routeName: AppRoutes.soutienProfessionnel,
-                title: "Le soutien professionnel",
-                vignetteName: "Soutien professionnel.png",
-              ),
-              Soutien(
-                routeName: AppRoutes.soutienPedagogique,
-                title: "Le soutien pédagogique",
-                vignetteName: "Soutien pedagogique.png",
-              ),
-              Soutien(
-                routeName: AppRoutes.insertionProfessionnel,
-                title: "L'insertion professionnelle",
-                vignetteName: "Insertion professionnel.png",
-              ),
-              Soutien(
-                routeName: AppRoutes.soutienPsycologique,
-                title: "Le soutien psychologique",
-                vignetteName: "Soutien psychologique.png",
-              ),
-              Soutien(
-                routeName: AppRoutes.soutienSocial,
-                title: "Le soutien social",
-                vignetteName: "Soutien social.png",
-              ),
-              Soutien(
-                routeName: AppRoutes.soutienMedical,
-                title: "Le soutien médical",
-                vignetteName: "Soutien medical.png",
-              ),
-              Soutien(
-                routeName: AppRoutes.soutienPersonnel,
-                title: "Les soutiens liés à l'épanouissement personnel",
-                vignetteName: "Epanouissement personnel.png",
-              ),
-            ],
+          LayoutBuilder(
+            builder: (context, constraints) {
+              return GridView.count(
+                crossAxisCount: (constraints.maxWidth / 550).floor() + 1,
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                childAspectRatio: 5 / 2,
+                children: const [
+                  Soutien(
+                    routeName: AppRoutes.soutienProfessionnel,
+                    title: "Le soutien professionnel",
+                    vignetteName: "Soutien professionnel.png",
+                  ),
+                  Soutien(
+                    routeName: AppRoutes.soutienPedagogique,
+                    title: "Le soutien pédagogique",
+                    vignetteName: "Soutien pedagogique.png",
+                  ),
+                  Soutien(
+                    routeName: AppRoutes.insertionProfessionnel,
+                    title: "L'insertion professionnelle",
+                    vignetteName: "Insertion professionnel.png",
+                  ),
+                  Soutien(
+                    routeName: AppRoutes.soutienPsycologique,
+                    title: "Le soutien psychologique",
+                    vignetteName: "Soutien psychologique.png",
+                  ),
+                  Soutien(
+                    routeName: AppRoutes.soutienSocial,
+                    title: "Le soutien social",
+                    vignetteName: "Soutien social.png",
+                  ),
+                  Soutien(
+                    routeName: AppRoutes.soutienMedical,
+                    title: "Le soutien médical",
+                    vignetteName: "Soutien medical.png",
+                  ),
+                  Soutien(
+                    routeName: AppRoutes.soutienPersonnel,
+                    title: "Les soutiens liés à l'épanouissement personnel",
+                    vignetteName: "Epanouissement personnel.png",
+                  ),
+                ],
+              );
+            }
           ),
         ]),
       ]);

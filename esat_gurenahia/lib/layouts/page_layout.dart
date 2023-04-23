@@ -17,7 +17,7 @@ class PageLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, raints) {
+    return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
         appBar: getAppBar(),
         drawer: Drawer(
@@ -63,11 +63,6 @@ class PageLayout extends StatelessWidget {
                   leading: const Icon(Icons.balance),
                   title: const Text('Vos droits'),
                   onTap: () => Get.toNamed(AppRoutes.droits),
-                ),
-                ListTile(
-                  leading: const Icon(Icons.image),
-                  title: const Text('Galerie'),
-                  onTap: () => Get.toNamed(AppRoutes.galerie),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -230,18 +225,6 @@ getAppBar() {
                 padding: EdgeInsets.symmetric(horizontal: 8),
                 child: Text(
                   "Vos Droits",
-                  style: TextStyle(fontSize: 18),
-                ),
-              ),
-            ),
-          ),
-          InkWell(
-            onTap: () => Get.toNamed(AppRoutes.galerie),
-            child: const Center(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8),
-                child: Text(
-                  "Galerie",
                   style: TextStyle(fontSize: 18),
                 ),
               ),

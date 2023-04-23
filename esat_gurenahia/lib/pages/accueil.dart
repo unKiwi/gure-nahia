@@ -11,7 +11,7 @@ class Accueil extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, raints) {
+    return LayoutBuilder(builder: (context, constraints) {
       return PageLayout([
         Padding(
           padding: EdgeInsets.symmetric(horizontal: Style.contentPadding + 8),

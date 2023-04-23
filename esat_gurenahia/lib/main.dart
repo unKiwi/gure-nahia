@@ -8,7 +8,6 @@ import 'package:esat_gurenahia/pages/ateliers/maraichage.dart';
 import 'package:esat_gurenahia/pages/ateliers/restauration.dart';
 import 'package:esat_gurenahia/pages/ateliers/sous_traitance.dart';
 import 'package:esat_gurenahia/pages/formalites.dart';
-import 'package:esat_gurenahia/pages/galerie.dart';
 import 'package:esat_gurenahia/pages/soutiens/soutien_medical.dart';
 import 'package:esat_gurenahia/pages/soutiens/soutien_personnel.dart';
 import 'package:esat_gurenahia/pages/soutiens/soutien_professionnel.dart';
@@ -136,10 +135,6 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: AppRoutes.lexique,
           page: () => Lexique(),
-        ),
-        GetPage(
-          name: AppRoutes.galerie,
-          page: () => Galerie(),
         ),
       ],
     );

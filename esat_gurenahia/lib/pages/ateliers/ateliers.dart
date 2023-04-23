@@ -14,7 +14,7 @@ class Ateliers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, raints) {
+    return LayoutBuilder(builder: (context, constraints) {
       return PageLayout([
         ContentPadding(
           content: [
@@ -31,49 +31,53 @@ class Ateliers extends StatelessWidget {
             SizedBox(height: 20),
             VideoView(),
             SizedBox(height: 20),
-            GridView.count(
-              crossAxisCount: (Get.width / 550).floor() + 1,
-              physics: NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              childAspectRatio: 4 / 3,
-              children: const [
-                Atelier(
-                  routeName: AppRoutes.atelierMaraichage,
-                  imageName: "maraichage.jpg",
-                  title: "L'Horticulture, le Maraîchage",
-                  vignetteName: "Horticulture1.png",
-                ),
-                Atelier(
-                  routeName: AppRoutes.atelierEspacesVert,
-                  imageName: "camion2.jpg",
-                  title: "Les Espaces verts",
-                  vignetteName: "Espaces Vert.png",
-                ),
-                Atelier(
-                  routeName: AppRoutes.atelierSousTraitance,
-                  imageName: "pilecarton.JPG",
-                  title: "La sous traitance",
-                  vignetteName: "Sous traitance.png",
-                ),
-                Atelier(
-                  routeName: AppRoutes.atelierLingerie,
-                  imageName: "machinelaver.JPG",
-                  title: "La lingerie",
-                  vignetteName: "Lingerie.png",
-                ),
-                Atelier(
-                  routeName: AppRoutes.atelierEntretien,
-                  imageName: "entretien.jpg",
-                  title: "L'entretien des locaux",
-                  vignetteName: "Entretien des locaux.png",
-                ),
-                Atelier(
-                  routeName: AppRoutes.atelierRestauration,
-                  imageName: "cuisine2.JPG",
-                  title: "La restauration",
-                  vignetteName: "Restauration.png",
-                ),
-              ],
+            LayoutBuilder(
+              builder: (context, constraints) {
+                return GridView.count(
+                  crossAxisCount: (constraints.maxWidth / 550).floor() + 1,
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  childAspectRatio: 4 / 3,
+                  children: const [
+                    Atelier(
+                      routeName: AppRoutes.atelierMaraichage,
+                      imageName: "maraichage.jpg",
+                      title: "L'Horticulture, le Maraîchage",
+                      vignetteName: "Horticulture1.png",
+                    ),
+                    Atelier(
+                      routeName: AppRoutes.atelierEspacesVert,
+                      imageName: "camion2.jpg",
+                      title: "Les Espaces verts",
+                      vignetteName: "Espaces Vert.png",
+                    ),
+                    Atelier(
+                      routeName: AppRoutes.atelierSousTraitance,
+                      imageName: "pilecarton.JPG",
+                      title: "La sous traitance",
+                      vignetteName: "Sous traitance.png",
+                    ),
+                    Atelier(
+                      routeName: AppRoutes.atelierLingerie,
+                      imageName: "machinelaver.JPG",
+                      title: "La lingerie",
+                      vignetteName: "Lingerie.png",
+                    ),
+                    Atelier(
+                      routeName: AppRoutes.atelierEntretien,
+                      imageName: "entretien.jpg",
+                      title: "L'entretien des locaux",
+                      vignetteName: "Entretien des locaux.png",
+                    ),
+                    Atelier(
+                      routeName: AppRoutes.atelierRestauration,
+                      imageName: "cuisine2.JPG",
+                      title: "La restauration",
+                      vignetteName: "Restauration.png",
+                    ),
+                  ],
+                );
+              }
             ),
           ],
         )

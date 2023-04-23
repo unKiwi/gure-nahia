@@ -21,7 +21,6 @@ class AppRoutes {
 
   static const remuneration = '/remuneration';
   static const droits = '/droits';
-  static const galerie = '/galerie';
   static const lexique = '/lexique';
   static const formaliteAdministratives = '/formalites-administratives';
   static const prestations = '/prestations';

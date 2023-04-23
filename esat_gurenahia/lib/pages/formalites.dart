@@ -12,7 +12,7 @@ class Formalites extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, raints) {
+    return LayoutBuilder(builder: (context, constraints) {
       return PageLayout([
         ContentPadding(content: [
           Padding(
