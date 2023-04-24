@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../components/content_padding.dart';
+import '../../components/my_carousel.dart';
 import '../../components/vignette.dart';
 import '../../layouts/page_layout.dart';
 
@@ -34,6 +35,11 @@ class Lingerie extends StatelessWidget {
             const Text(
               "S'occupe de l'entretien du linge des résidents du foyer, d'associations sportives, et du repassage du linge de clientèle extérieure.",
             ),
+            const SizedBox(height: 20),
+            const MyCarousel([
+              "tablerepasssee.JPG",
+              "machinelaver.JPG",
+            ]),
           ],
         )
       ]);

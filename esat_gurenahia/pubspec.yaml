@@ -41,6 +41,9 @@ dependencies:
   url_launcher: ^6.1.9
   url_strategy: ^0.2.0
   appinio_video_player: ^1.2.0
+  carousel_slider: ^4.2.1
+  infinite_carousel: ^1.0.2
+  auto_size_text: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -68,6 +71,7 @@ flutter:
   assets:
     - fonts/
     - assets/
+    - assets/images/
     - assets/images/carousel/
     - assets/images/drawer/
     - assets/images/galerie/

@@ -9,7 +9,7 @@ class AppRoutes {
   static const atelierEntretien = '/atelier-entretien';
   static const atelierRestauration = '/atelier-restauration';
 
-  static const accompagnement = '/soutien';
+  static const accompagnement = '/accompagnement';
   static const soutienProfessionnel = '/soutien-professionnel';
   static const soutienPedagogique = '/soutien-pedagogique';
   static const insertionProfessionnel = '/insertion-professionnel';

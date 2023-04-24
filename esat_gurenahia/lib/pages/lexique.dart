@@ -22,88 +22,87 @@ class Lexique extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
             ),
-            ListTile(
-              title: Text(
-                "APAJH ",
-                style: TextStyle(color: Style.primaryColor),
-              ),
-              subtitle: Text("Association Pour Adultes et Jeunes Handicapés"),
-            ),
-            ListTile(
-              title: Text(
-                "MAPHA",
-                style: TextStyle(color: Style.primaryColor),
-              ),
-              subtitle:
-                  Text("Maisons d'Accueil pour Personnes Handicapées Âgées"),
-            ),
-            ListTile(
-              title: Text(
-                "ESAT",
-                style: TextStyle(color: Style.primaryColor),
-              ),
-              subtitle: Text("Etablissement et Service d'Aide par le Travail"),
-            ),
-            ListTile(
-              title: Text(
-                "CDAPH",
-                style: TextStyle(color: Style.primaryColor),
-              ),
-              subtitle: Text(
-                  "Commission des Droits et de l'Autonomie des Personnes Handicapées"),
-            ),
-            ListTile(
-              title: Text(
-                "CVS",
-                style: TextStyle(color: Style.primaryColor),
-              ),
-              subtitle: Text("Conseil de la Vie Sociale"),
-            ),
-            ListTile(
-              title: Text(
-                "AAH",
-                style: TextStyle(color: Style.primaryColor),
-              ),
-              subtitle: Text("Allocation aux Adultes Handicapés"),
-            ),
-            ListTile(
-              title: Text(
-                "MSA",
-                style: TextStyle(color: Style.primaryColor),
-              ),
-              subtitle: Text("Mutualité Sociale Agricole"),
-            ),
-            ListTile(
-              title: Text(
-                "CAF",
-                style: TextStyle(color: Style.primaryColor),
-              ),
-              subtitle: Text("Caisse d'Allocations Familiales"),
-            ),
-            ListTile(
-              title: Text(
-                "MDPH",
-                style: TextStyle(color: Style.primaryColor),
-              ),
-              subtitle: Text("Maison Départementale des Personnes Handicapées"),
-            ),
-            ListTile(
-              title: Text(
-                "CESF",
-                style: TextStyle(color: Style.primaryColor),
-              ),
-              subtitle: Text("Conseiller en Économie Sociale Familiale"),
-            ),
-            ListTile(
-              title: Text(
-                "PP",
-                style: TextStyle(color: Style.primaryColor),
-              ),
-              subtitle: Text("Projet Professionnel"),
-            ),
+            LayoutBuilder(builder: (context, constraints) {
+              return GridView.count(
+                crossAxisCount: (constraints.maxWidth / 400).floor() + 1,
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                childAspectRatio: 7 / 3,
+                children: const [
+                  Definition(
+                    sigle: "APAJH",
+                    meaning: "Association Pour Adultes et Jeunes Handicapés",
+                  ),
+                  Definition(
+                    sigle: "MAPHA",
+                    meaning: "Maisons d'Accueil pour Personnes Handicapées Âgées",
+                  ),
+                  Definition(
+                    sigle: "ESAT",
+                    meaning: "Etablissement et Service d'Aide par le Travail",
+                  ),
+                  Definition(
+                    sigle: "CDAPH",
+                    meaning: "Commission des Droits et de l'Autonomie des Personnes Handicapées",
+                  ),
+                  Definition(
+                    sigle: "CVS",
+                    meaning: "Conseil de la Vie Sociale",
+                  ),
+                  Definition(
+                    sigle: "AAH",
+                    meaning: "Allocation aux Adultes Handicapés",
+                  ),
+                  Definition(
+                    sigle: "MSA",
+                    meaning: "Mutualité Sociale Agricole",
+                  ),
+                  Definition(
+                    sigle: "CAF",
+                    meaning: "Caisse d'Allocations Familiales",
+                  ),
+                  Definition(
+                    sigle: "MDPH",
+                    meaning: "Maison Départementale des Personnes Handicapées",
+                  ),
+                  Definition(
+                    sigle: "CESF",
+                    meaning: "Conseiller en Économie Sociale Familiale",
+                  ),
+                  Definition(
+                    sigle: "PP",
+                    meaning: "Projet Professionnel",
+                  ),
+                ],
+              );
+            }),
           ],
         )
       ]);
     });
+  }
+}
+
+class Definition extends StatelessWidget {
+  final String sigle;
+  final String meaning;
+
+  const Definition({
+    super.key,
+    required this.sigle,
+    required this.meaning,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: ListTile(
+        title: Text(
+          sigle,
+          style: TextStyle(color: Style.primaryColor),
+        ),
+        subtitle: Text(meaning),
+      ),
+    );
   }
 }

@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../style.dart';
 
 class Accueil extends StatelessWidget {
-   Accueil({super.key});
+  Accueil({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,16 +16,20 @@ class Accueil extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: Style.contentPadding + 8),
           child: Padding(
-            padding:  EdgeInsets.only(top: 20, bottom: 20, left: 10),
+            padding: EdgeInsets.only(top: 20, bottom: 20, left: 10),
             child: Text(
               "Bienvenue sur le livret d'accueil de l'ESAT Gure Nahia",
               style: Theme.of(context).textTheme.titleLarge,
             ),
           ),
         ),
-        // AccueilCarousel(),
-         SizedBox(height: 20),
-        ContentPadding(content:  [ ///////////////////// pb de padding
+        Image.asset(
+          "assets/images/apajh-esat-gure-nahia.png",
+          height: 400,
+        ),
+        SizedBox(height: 20),
+        ContentPadding(content: [
+          ///////////////////// pb de padding
           Text(
             "L'ESAT a été créé en 1970 et possède une autorisation pour 180 ETP (Equivalent Temps Plein)",
           ),
@@ -52,13 +56,13 @@ class Accueil extends StatelessWidget {
             ),
           ),
         ]),
-         SizedBox(height: 20),
+        SizedBox(height: 20),
         ColoredBox(
-          color:  Color(0xFF9BC2FF),
+          color: Color(0xFF9BC2FF),
           child: Padding(
             padding: EdgeInsets.symmetric(
                 horizontal: Style.contentPadding + 8, vertical: 20),
-            child:  ListTile(
+            child: ListTile(
               title: Text("LE REGLEMENT DE FONCTIONNEMENT"),
               subtitle: Text(
                 "Vous devez respecter le règlement de fonctionnement de l'ESAT.\nIl vous sera fourni lors de la signature de votre contrat d'aide et de soutien.",
@@ -70,68 +74,3 @@ class Accueil extends StatelessWidget {
     });
   }
 }
-
-// class AccueilCarousel extends StatelessWidget {
-//   final List<String> images = [
-//     "assets/images/carousel/global_view.jpeg",
-//     "assets/images/carousel/facade.jpeg",
-//     "assets/images/carousel/interieur.jpeg",
-//     "assets/images/carousel/serre.jpeg",
-//     "assets/images/carousel/fleure.jpeg",
-//   ];
-
-//   AccueilCarousel({
-//     super.key,
-//   });
-
-//   @override
-//   Widget build(BuildContext context) {
-//     // return SizedBox(
-//     //   height: 500,
-//     //   child: InfiniteCarousel.builder(
-//     //     itemCount: images.length,
-//     //     itemExtent: 350,
-//     //     center: true,
-//     //     anchor: 0.0,
-//     //     velocityFactor: 0.2,
-//     //     onIndexChanged: (index) {},
-//     //     controller: InfiniteScrollController(),
-//     //     axisDirection: Axis.horizontal,
-//     //     loop: true,
-//     //     itemBuilder: (context, itemIndex, realIndex) {
-//     //       return Container(
-//     //         color: Colors.amber,
-//     //         child: Image.asset(
-//     //           images[itemIndex],
-//     //         ),
-//     //       );
-//     //     },
-//     //     scrollBehavior: ScrollConfiguration.of(context).copyWith(
-//     //       dragDevices: {
-//     //         // Allows to swipe in web browsers
-//     //         PointerDeviceKind.touch,
-//     //         PointerDeviceKind.mouse
-//     //       },
-//     //     ),
-//     //   ),
-//     // );
-//     return CarouselSlider(
-//       items: [
-//         Image.asset("assets/images/carousel/global_view.jpeg"),
-//         Image.asset("assets/images/carousel/facade.jpeg"),
-//         Image.asset("assets/images/carousel/interieur.jpeg"),
-//         Image.asset("assets/images/carousel/serre.jpeg"),
-//         Image.asset("assets/images/carousel/fleure.jpeg"),
-//       ]
-//           .map((e) => ClipRRect(
-//                 borderRadius: BorderRadius.circular(10.0),
-//                 child: e,
-//               ))
-//           .toList(),
-//       options: CarouselOptions(
-//         autoPlay: true,
-//         height: 300,
-//       ),
-//     );
-//   }
-// }

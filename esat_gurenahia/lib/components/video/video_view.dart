@@ -4,15 +4,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class VideoView extends StatelessWidget {
-  const VideoView({super.key});
+  final String assetVideo;
+  
+  const VideoView(this.assetVideo, {super.key,});
 
   @override
   Widget build(BuildContext context) {
     return GetBuilder<VideoController>(
-        init: VideoController(),
-        builder: (c) {
-          return CustomVideoPlayer(
-              customVideoPlayerController: c.customVideoPlayerController);
-        });
+      init: VideoController(assetVideo),
+      builder: (c) {
+        return CustomVideoPlayer(
+          customVideoPlayerController: c.customVideoPlayerController,
+        );
+      },
+    );
   }
 }

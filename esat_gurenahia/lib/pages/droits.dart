@@ -15,8 +15,13 @@ class Droits extends StatelessWidget {
         ContentPadding(content: [
           Padding(
             padding:  EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-            child: Text(
-              "Les droits",
+            child: Text.rich(
+              TextSpan(
+                children: const [
+                  WidgetSpan(child: Icon(Icons.balance)),
+                  TextSpan(text: ' Vos droits'),
+                ],
+              ),
               style: Theme.of(context).textTheme.titleLarge,
             ),
           ),

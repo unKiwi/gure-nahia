@@ -15,8 +15,13 @@ class Remuneration extends StatelessWidget {
         ContentPadding(content: [
           Padding(
             padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-            child: Text(
-              "La rémunération",
+            child: Text.rich(
+              TextSpan(
+                children: const [
+                  WidgetSpan(child: Icon(Icons.euro)),
+                  TextSpan(text: ' Rémunération'),
+                ],
+              ),
               style: Theme.of(context).textTheme.titleLarge,
             ),
           ),

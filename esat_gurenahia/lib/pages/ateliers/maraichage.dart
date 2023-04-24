@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../components/content_padding.dart';
+import '../../components/my_carousel.dart';
 import '../../components/vignette.dart';
 import '../../layouts/page_layout.dart';
 
@@ -34,8 +35,17 @@ class Maraichage extends StatelessWidget {
             const Text(
               "Atelier « Métiers de la terre ».\nCet atelier a en charge la culture de légumes, la production végétale, la vente (légumes, plantes, jus de pommes), tout en veillant au respect environnemental.",
             ),
+            const SizedBox(height: 20),
+            const MyCarousel([
+              "magasin.jpg",
+              "pommier.JPG",
+              "pommier2.JPG",
+              "serre.jpg",
+              "serre2.JPG",
+              "plante.JPG",
+            ]),
           ],
-        )
+        ),
       ]);
     });
   }
