@@ -7,7 +7,7 @@ import 'package:esat_gurenahia/layouts/page_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../components/video/video_view.dart';
+import '../../components/video_atelier_view.dart';
 
 class Ateliers extends StatelessWidget {
   const Ateliers({super.key});
@@ -34,7 +34,7 @@ class Ateliers extends StatelessWidget {
               "L'ESAT propose diverses activités et outils adaptés qui vous permettent de développer votre potentiel au sein de l'ESAT. Des moniteurs d'atelier sont là pour vous encadrer.",
             ),
             SizedBox(height: 20),
-            VideoView("ESAT_animation.mp4"),
+            VideoAtelierView(),
             SizedBox(height: 20),
             LayoutBuilder(
               builder: (context, constraints) {

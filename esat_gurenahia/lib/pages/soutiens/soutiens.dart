@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../common/app_routes.dart';
-import '../../components/video/video_view.dart';
+import '../../components/video_soutien_view.dart';
 
 class Soutiens extends StatelessWidget {
   Soutiens({super.key});
@@ -33,7 +33,7 @@ class Soutiens extends StatelessWidget {
             "L'ESAT vous accompagne dans votre parcours professionnel et met en œuvre différents soutiens en lien avec votre projet personnalisé. Ils sont proposés durant le temps de travail.",
           ),
           SizedBox(height: 20),
-          VideoView("ESAT_animation.mp4"),
+          VideoSoutienView(),
           SizedBox(height: 20),
           LayoutBuilder(
             builder: (context, constraints) {
