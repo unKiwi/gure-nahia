@@ -5,7 +5,7 @@ import 'package:esat_gurenahia/layouts/page_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../style.dart';
+import '../common/style.dart';
 
 class Prestations extends StatelessWidget {
   Prestations({super.key});

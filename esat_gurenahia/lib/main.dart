@@ -7,14 +7,12 @@ import 'package:esat_gurenahia/pages/ateliers/lingerie.dart';
 import 'package:esat_gurenahia/pages/ateliers/maraichage.dart';
 import 'package:esat_gurenahia/pages/ateliers/restauration.dart';
 import 'package:esat_gurenahia/pages/ateliers/sous_traitance.dart';
-import 'package:esat_gurenahia/pages/formalites.dart';
 import 'package:esat_gurenahia/pages/soutiens/soutien_medical.dart';
 import 'package:esat_gurenahia/pages/soutiens/soutien_personnel.dart';
 import 'package:esat_gurenahia/pages/soutiens/soutien_professionnel.dart';
 import 'package:esat_gurenahia/pages/soutiens/soutien_social.dart';
 import 'package:esat_gurenahia/pages/soutiens/soutiens.dart';
-import 'package:esat_gurenahia/repository.dart';
-import 'package:esat_gurenahia/style.dart';
+import 'package:esat_gurenahia/common/style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:url_strategy/url_strategy.dart';
@@ -41,8 +39,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    Get.put(Repository());
-
     return GetMaterialApp(
       title: "Livret d'accueil - ESAT Gure Nahia",
       theme: Style.defaultTheme,
@@ -119,10 +115,6 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: AppRoutes.insertionProfessionnel,
           page: () => InsertionProfessionnel(),
-        ),
-        GetPage(
-          name: AppRoutes.formaliteAdministratives,
-          page: () => Formalites(),
         ),
         GetPage(
           name: AppRoutes.prestations,

@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../style.dart';
+import '../common/style.dart';
 
 class ContentPadding extends StatelessWidget {
   List<Widget> content;

@@ -1,14 +1,13 @@
 // ignore_for_file: prefer_const_constructors_in_immutables
 
 import 'package:esat_gurenahia/common/app_routes.dart';
-import 'package:esat_gurenahia/repository.dart';
 import 'package:flutter/material.dart';
 import 'package:footer/footer.dart';
 import 'package:footer/footer_view.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../style.dart';
+import '../common/style.dart';
 
 class PageLayout extends StatelessWidget {
   final List<Widget> body;
@@ -241,75 +240,4 @@ getAppBar() {
       ),
     ),
   );
-}
-
-class FAB extends StatelessWidget {
-  FAB({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return FloatingActionButton(
-      onPressed: () {
-        const title = "Accessibilité";
-        Widget content = GetBuilder<Repository>(
-          builder: (c) {
-            return SwitchListTile(
-              title: const Text("Lecture facile"),
-              value: c.isEasyReading,
-              onChanged: (value) {
-                c.isEasyReading = value;
-                Get.changeTheme(
-                  value ? Style.easyReadingTheme : Style.defaultTheme,
-                );
-              },
-            );
-          },
-        );
-
-        if (Get.width > Style.smallScreenWidth) {
-          showDialog(
-            context: context,
-            builder: (context) => AlertDialog(
-              title: const Text(title),
-              content: content,
-            ),
-          );
-          return;
-        }
-        showModalBottomSheet(
-          context: context,
-          backgroundColor: Colors.transparent,
-          builder: (context) => Container(
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(30),
-                topRight: Radius.circular(30),
-              ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(30),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    title,
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                  content,
-                ],
-              ),
-            ),
-          ),
-        );
-      },
-      child: const Icon(
-        Icons.accessible,
-        size: 40,
-      ),
-    );
-  }
 }

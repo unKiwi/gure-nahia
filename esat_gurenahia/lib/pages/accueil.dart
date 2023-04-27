@@ -4,7 +4,7 @@ import 'package:esat_gurenahia/components/content_padding.dart';
 import 'package:esat_gurenahia/layouts/page_layout.dart';
 import 'package:flutter/material.dart';
 
-import '../style.dart';
+import '../common/style.dart';
 
 class Accueil extends StatelessWidget {
   Accueil({super.key});
@@ -23,13 +23,16 @@ class Accueil extends StatelessWidget {
             ),
           ),
         ),
-        Image.asset(
-          "assets/images/apajh-esat-gure-nahia.png",
-          height: 400,
+        ConstrainedBox(
+          constraints: BoxConstraints(
+            maxHeight: 400
+          ),
+          child: Image.asset(
+            "assets/images/apajh-esat-gure-nahia.png",
+          ),
         ),
         SizedBox(height: 20),
         ContentPadding(content: [
-          ///////////////////// pb de padding
           Text(
             "L'ESAT a été créé en 1970 et possède une autorisation pour 180 ETP (Equivalent Temps Plein)",
           ),

@@ -4,7 +4,7 @@ import 'package:esat_gurenahia/components/content_padding.dart';
 import 'package:esat_gurenahia/layouts/page_layout.dart';
 import 'package:flutter/material.dart';
 
-import '../style.dart';
+import '../common/style.dart';
 
 class Lexique extends StatelessWidget {
   Lexique({super.key});
