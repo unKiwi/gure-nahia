@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../components/content_padding.dart';
-import '../../components/my_carousel.dart';
+import '../../components/my_grid.dart';
 import '../../components/vignette.dart';
 import '../../layouts/page_layout.dart';
 
@@ -36,7 +36,7 @@ class Restauration extends StatelessWidget {
               "Cet atelier élabore tous les repas pour l'ensemble des usagers et du personnel tout en prenant en charge la réception des marchandises, la légumerie, la conception des menus.",
             ),
             const SizedBox(height: 20),
-            const MyCarousel([
+            const MyGrid([
               "cuisine.JPG",
               "cuisine2.JPG",
             ]),

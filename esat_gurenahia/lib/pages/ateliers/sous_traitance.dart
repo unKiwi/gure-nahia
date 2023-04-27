@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../components/content_padding.dart';
-import '../../components/my_carousel.dart';
+import '../../components/my_grid.dart';
 import '../../components/vignette.dart';
 import '../../layouts/page_layout.dart';
 
@@ -35,7 +35,7 @@ class SousTraitance extends StatelessWidget {
             const Text(
               "Divers travaux sont réalisés au sein de ces ateliers pour des entreprises extérieures en majorité locales (étiquetage, conditionnement, mailing, façonnage).",
             ),
-            const MyCarousel([
+            const MyGrid([
               "ateliercollage.JPG",
               "atelierpate2.JPG",
               "atelierteeshirt5.JPG",

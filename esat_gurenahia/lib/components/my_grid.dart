@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class MyCarousel extends StatelessWidget {
+class MyGrid extends StatelessWidget {
   final List<String> images;
 
-  const MyCarousel(this.images, {super.key});
+  const MyGrid(this.images, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,18 +33,6 @@ class MyCarousel extends StatelessWidget {
                             ),
                           ),
                           const CloseButton(),
-                          // Positioned(
-                          //   child: IconButton(
-                          //     onPressed: () {},
-                          //     icon: Icon(Icons.arrow_back_ios),
-                          //   ),
-                          // ),
-                          // Positioned(
-                          //   child: IconButton(
-                          //     onPressed: () {},
-                          //     icon: Icon(Icons.arrow_forward_ios),
-                          //   ),
-                          // ),
                         ],
                       ),
                     )),

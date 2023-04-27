@@ -27,7 +27,7 @@ class Quotidien extends StatelessWidget {
             title: Text("du lundi au jeudi de 08h45 à 17h00"),
           ),
           ListTile(
-            title: Text("du lundi au jeudi de 08h45 à 17h00"),
+            title: Text("le vendredi de 08h45 à 16h00"),
           ),
           Text(
               "Vos congés annuels sont positionnés sur les périodes de fermeture de l'ESAT (5 semaines)"),

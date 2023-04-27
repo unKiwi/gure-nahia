@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../components/content_padding.dart';
-import '../../components/my_carousel.dart';
+import '../../components/my_grid.dart';
 import '../../components/vignette.dart';
 import '../../layouts/page_layout.dart';
 
@@ -36,7 +36,7 @@ class EspacesVert extends StatelessWidget {
               "4 équipes sont en charge d'entretenir les parcs et jardins des 2 sites, de particuliers, d'entreprises, campings.",
             ),
             const SizedBox(height: 20),
-            const MyCarousel([
+            const MyGrid([
               "camion.jpg",
               "camion2.jpg",
               "camion3.jpg",
